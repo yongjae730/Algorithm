@@ -20,4 +20,4 @@ for j in range(N):
         cnt += 1
 
 # 자식 없는 남은 노드의 개수를 출력
-print(cnt)
+print(f'{cnt}')
