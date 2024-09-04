@@ -21,4 +21,3 @@ for j in range(N):
 
 # 자식 없는 남은 노드의 개수를 출력
 print(cnt)
-asdsadsadsa
