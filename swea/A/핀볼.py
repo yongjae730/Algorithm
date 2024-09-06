@@ -44,7 +44,7 @@ for tc in range(1, T + 1):
     # 보드 입력과 웜홀 정보 저장
     for i in range(1, N + 1):
         board.append([5] + list(map(int, input().strip().split())) + [5])  # 보드 양 끝에 5번 블록(벽)을 추가
-        for j in range(N):
+        for j in range(1, N + 1):
             num = board[i][j]
             if 6 <= board[i][j] <= 10:  # 웜홀 번호인 경우
                 if wormhole_check[num] == (0, 0):  # 웜홀이 처음 발견되면 저장
@@ -57,8 +57,8 @@ for tc in range(1, T + 1):
     board.append([5] * (N + 2))  # 보드 하단 외곽에 5번 블록 추가
 
     # 빈 공간(0)에서 모든 방향으로 게임 진행
-    for x in range(1, N + 2):
-        for y in range(1, N + 2):
+    for x in range(1, N + 1):
+        for y in range(1, N + 1):
             if board[x][y] == 0:  # 빈 공간에서 시작
                 for k in range(4):  # 상, 하, 좌, 우 4방향에 대해 게임 진행
                     total = game(x, y, k)  # 게임 진행 후 획득한 포인트 계산
