@@ -1,5 +1,5 @@
-# import sys
-# sys.stdin = open('input.txt','r')
+import sys
+sys.stdin = open('input.txt','r')
 
 # 세포 배열(cell)을 트레이(tray)의 중앙에 배치하는 함수
 def cell_to_tray(cell, tray):
@@ -36,9 +36,8 @@ def cell_culture(tray, cell_info, Time):
         q.append(cell_info[i])
     while Time > 0:
         # 세포 정보를 세포의 크기 별로 내림차순 정렬
-        # 제출 할 땐 while 문 밖에 뒀는데 여기 두는게 맞다고 생각함 근데 왜 됨?
+        # 제출 할 땐 while 문 밖에 뒀는데 여기 두는게 맞다고 생각함
         # 안에 두고 제출 하니까 시간이 약 2배가 늘긴함
-        # 근데 왜 밖에 둬도 되는지 잘 모르겠음 내일 강사님에게 물어볼 것
         q = sorted(q, key=lambda x: -x[0])
         # 시간 -1
         Time -= 1
