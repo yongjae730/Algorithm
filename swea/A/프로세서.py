@@ -1,3 +1,7 @@
+import sys
+
+sys.stdin = open('input.txt', 'r')
+
 def check_core(arr):
     """
     2D 배열에서 값이 1인 위치(코어의 위치)를 찾아서 core_location 리스트에 추가한다.
