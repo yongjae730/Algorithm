@@ -33,3 +33,6 @@ for tc in range(1, T + 1):
         find_set(j)
     result = len(set(parent))
     print(f'#{tc} {result}')
+
+
+

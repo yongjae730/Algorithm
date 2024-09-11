@@ -15,7 +15,6 @@ def find(x):
     return parents[x]
 
 
-
 def union(x, y):
     # x와 y의 대표자를 찾자.
     root_x = find(x)
@@ -27,9 +26,9 @@ def union(x, y):
     # 다른 집합이라면 더 작은 루트노트에 합친다.
     # 문제에 따라 다르다
     if root_x < root_y:
-        parents[y] = root_x # y가 바라보는 부모는 x의 대표자
+        parents[root_y] = root_x  # y가 바라보는 부모는 x의 대표자
     else:
-        parents[x] = root_y
+        parents[root_x] = root_y
 
 
 # 예제 사용법
@@ -40,7 +39,7 @@ union(1, 3)
 union(2, 3)
 union(5, 6)
 
-print(parents)   # 대표자의 수 == 집합의 수
+print(parents)  # 대표자의 수 == 집합의 수
 
 print('find_set(6) = ', find(6))
 
