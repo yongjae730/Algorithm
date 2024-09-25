@@ -1,11 +1,7 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 def is_user_data_valid(user_data):
-   
-    if user_data['id'] != '' and user_data['password'] != '':
-        return True
-    else:
-        return False
+    pass
     # 여기에 코드를 작성하여 함수를 완성합니다.
 
 

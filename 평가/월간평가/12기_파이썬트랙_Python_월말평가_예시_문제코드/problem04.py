@@ -1,12 +1,8 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 def is_id_valid(user_data):
-    user_id = user_data['id'][-1]
-
-    if user_id.isdigit() == False:
-        return False
-    return True
-
+    pass
+    # 여기에 코드를 작성하여 함수를 완성합니다.
 
 
 # 추가 테스트를 위한 코드 작성 가능

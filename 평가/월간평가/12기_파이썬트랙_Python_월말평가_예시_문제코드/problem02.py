@@ -1,14 +1,7 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 def under_60(scores):
-    
-    cnt = 0
-    for i in range(len(scores)):
-        if scores[i] < 60:
-            cnt += 1
-
-    return cnt 
-
+    pass
     # 여기에 코드를 작성하여 함수를 완성합니다.
 
 
