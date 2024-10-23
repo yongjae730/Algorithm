@@ -1,11 +1,3 @@
-#!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
 #
 # Complete the 'findSubstring' function below.
 #
@@ -71,7 +63,6 @@ import sys
 # print(result)
 
 
-
 #
 # Complete the 'findSum' function below.
 #
@@ -81,34 +72,119 @@ import sys
 #  2. 2D_INTEGER_ARRAY queries
 #
 
-def findSum(numbers, queries):
-    # Write your code here
-    a = [0]
-    b = [0]
-    for x in numbers:
-        a.append(a[-1] + x)
-        b.append(b[-1] + (x == 0))
-    return [a[r] - a[l - 1] + x * (b[r] - b[l - 1]) for l, r, x in queries]
+# def findSum(numbers, queries):
+#     # Write your code here
+#     a = [0]
+#     b = [0]
+#     for x in numbers:
+#         a.append(a[-1] + x)
+#         b.append(b[-1] + (x == 0))
+#     return [a[r] - a[l - 1] + x * (b[r] - b[l - 1]) for l, r, x in queries]
+#
+#
+# if __name__ == '__main__':
+#
+#     numbers_count = int(input().strip())
+#
+#     numbers = []
+#
+#     for _ in range(numbers_count):
+#         numbers_item = int(input().strip())
+#         numbers.append(numbers_item)
+#
+#     queries_rows = int(input().strip())
+#     queries_columns = int(input().strip())
+#
+#     queries = []
+#
+#     for _ in range(queries_rows):
+#         queries.append(list(map(int, input().rstrip().split())))
+#
+#     result = findSum(numbers, queries)
+#
+#     print('\n'.join(map(str, result)))
+#########################################################################################
+
+# def getMaxArea(w, h, isVertical, distance):
+#     result = []
+#     width = [0,w]
+#     height = [0,h]
+#     if isVertical[0] == 0 and isVertical[1] == 0:
+#         height[1] = distance[0]
+#         a = (width[1]-width[0])*(height[1]-height[0])
+#         height[0] = distance[1]
+#         b = (width[1]-width[0])*(height[1]-height[0])
+#     elif isVertical[0] == 0 and isVertical[1] == 1:
+#         height[0] = distance[1]
+#         a = (width[1]-width[0])*(height[1]-height[0])
+#         width[0] = distance[1]
+#         b = (width[1]-width[0])*(height[1]-height[0])
+#
+#     elif isVertical[0] == 1 and isVertical[1] == 0 :
+#         width[0] = distance[0]
+#         a = (width[1]-width[0])*(height[1]-height[0])
+#         height[1] = distance[0]
+#         b = (width[1]-width[0])*(height[1]-height[0])
+#
+#     elif isVertical[0] == 1 and isVertical[1] == 1:
+#         width[0] = distance[0]
+#         a = (width[1]-width[0])*(height[1]-height[0])
+#         width[1] = distance[1]
+#         b = (width[1]-width[0])*(height[1]-height[0])
+#
+#     result.append(a)
+#     result.append(b)
+#
+#
+#     return result
+
+def sortedSum(a):
+
+    result = 0
+    b = [a[0]]
+    i = 1
+    while i <= len(a):
+        b.sort()
+
+        if i == len(a):
+            for k in range(len(b)):
+                result += b[k] * (k + 1)
+            break
+        for j in range(len(b)):
+            result += b[j]*(j+1)
+
+        result = result % 1000000007
+        b.append(a[i])
+
+        i+=1
+
+    return result
+
+a = []
+for _ in range(3):
+    a.append(int(input()))
+print(sortedSum(a))
 
 
-if __name__ == '__main__':
 
-    numbers_count = int(input().strip())
 
-    numbers = []
 
-    for _ in range(numbers_count):
-        numbers_item = int(input().strip())
-        numbers.append(numbers_item)
 
-    queries_rows = int(input().strip())
-    queries_columns = int(input().strip())
 
-    queries = []
 
-    for _ in range(queries_rows):
-        queries.append(list(map(int, input().rstrip().split())))
 
-    result = findSum(numbers, queries)
 
-    print('\n'.join(map(str, result)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
