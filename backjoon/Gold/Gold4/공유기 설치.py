@@ -6,19 +6,27 @@ input = sys.stdin.readline
 def wifi(houses, c):
     start = 1
     end = max(houses) - min(houses)
-    installed_house = []
     result = 0
 
-    installed_house.append(min(houses))
-    installed_house.append(max(houses))
-
     while start <= end:
-        distance = 0
+        installed_house = []
+        installed_house.append(min(houses))
+        cnt = 1
         mid = (start + end) // 2
-        for i in range(1, N - 1):
-
-            if houses[i] - mid > 0:
-                ...
+        for i in range(1, N):
+            if houses[i] >= installed_house[-1] + mid:
+                installed_house.append(houses[i])
+                cnt += 1
+            else:
+                continue
+        if cnt >= c:
+            start = mid + 1
+            result = mid
+        # elif cnt < c:
+        else:
+            end = mid - 1
+            # start = mid+1
+    return result
 
 
 N, C = map(int, input().split())
@@ -28,4 +36,4 @@ for _ in range(N):
     houses.append(house)
 
 houses.sort()
-wifi(houses, C)
+print(wifi(houses, C))
