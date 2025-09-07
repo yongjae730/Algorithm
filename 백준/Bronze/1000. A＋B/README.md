@@ -2,6 +2,14 @@
 
 [문제 링크](https://www.acmicpc.net/problem/1000) 
 
+### 생각한 점
+- 처음으로 이제 input 값을 받음
+- scanner 사용을 하기위해 해당 [티스토리](https://st-lab.tistory.com/92) 참고하였음
+
+### 찾아볼 점
+- scanner로 nextInt()를 통해 정수형 값 2개를 받아오긴 했는데 입력값에 가운데 공백은 어떻게 된거지? 라는생각
+
+
 ### 성능 요약
 
 메모리: 17668 KB, 시간: 176 ms
