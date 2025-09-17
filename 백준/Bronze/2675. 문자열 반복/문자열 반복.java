@@ -6,20 +6,17 @@ class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
-
         for (int i = 0; i < t; i++) {
-            String ans = "";
-
-            int r = sc.nextInt();
+            int r =sc.nextInt();
             String s = sc.next();
 
-            for (int k = 0; k < s.length(); k++) {
-                for (int j = 0; j < r; j++) {
-                    ans += s.charAt(k);
-                }
-            }
+            StringBuilder sb = new StringBuilder();
 
-            System.out.println(ans);
+            for (char c : s.toCharArray()) {
+                // String.valuOf(c)로 문자를 문자열로 바꾸고 repeat(r)로 r번 반복
+                sb.append(String.valueOf(c).repeat(r));
+            }
+            System.out.println(sb.toString());
         }
     }
 }
