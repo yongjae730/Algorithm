@@ -18,21 +18,34 @@ public class Main { // 백준 1269번 문제, 대칭 차집합 (집합과 맵)
         for (int i = 0; i < N; i++) {
             A.add(Integer.parseInt(st.nextToken()));
         }
+        int intersectionCount = 0;
         st = new StringTokenizer(br.readLine());
         for (int j = 0; j < M; j++) {
-            B.add(Integer.parseInt(st.nextToken()));
+            int elementalB = Integer.parseInt(st.nextToken());
+            if(A.contains(elementalB)) {
+                intersectionCount++;
+            }
         }
+
+//        for (int j = 0; j < M; j++) {
+//            B.add(Integer.parseInt(st.nextToken()));
+//        }
+//        // A-B
+//        HashSet<Integer> temp = new HashSet<>();
+//        temp.addAll(A);
+//        A.removeAll(B);
+//
+//        // B-A
+//        B.removeAll(temp);
+//        메모리 낭비가 심하다 생각해 AI에게 최적화 자문
+        // A-B + B-A = A+B - 2* A ∩ B
         int result = 0;
-        // A-B
-        HashSet<Integer> temp = new HashSet<>();
-        temp.addAll(A);
-        A.removeAll(B);
 
-        // B-A
-        B.removeAll(temp);
+//        result = A.size() + B.size();
+        result = N+M-(2*intersectionCount);
+        bw.write(String.valueOf(result));
 
-        result = A.size() + B.size();
-
-        System.out.print(result);
+        br.close();
+        bw.close();
     }
 }
